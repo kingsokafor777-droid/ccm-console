@@ -5,7 +5,7 @@ the repository owner. Do not include database URLs, secret keys, bearer tokens, 
 evidence bodies, raw cloud snapshots, customer identifiers, screenshots, or production
 logs in public reports.
 
-The v0.1.0 source release is a deployable application architecture, not an operated
+This source release is a deployable application architecture, not an operated
 service. Deployer responsibilities include TLS, OIDC integration, secret rotation, CORS,
 rate limiting, PostgreSQL RLS role design, backup/recovery, monitoring, logging policy,
 network segmentation, migration approval, and independent security review.

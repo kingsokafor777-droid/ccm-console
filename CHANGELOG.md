@@ -1,6 +1,12 @@
 # Changelog
 
-## 0.1.0 — planned initial release
+## 0.1.1 — hosted CI bootstrap repair
+
+The hosted Node jobs now enable Corepack-managed pnpm before frontend installation. This
+release contains no product-surface, persistence, authorization, evidence, or workflow
+semantic change.
+
+## 0.1.0 — initial release
 
 - Add tenant-scoped FastAPI API contracts, a PostgreSQL RLS-ready read/workbench schema,
   bearer identity adapter boundary, and structured role checks.
