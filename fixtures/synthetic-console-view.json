@@ -1,0 +1,95 @@
+{
+  "assessments": [
+    {
+      "assessed_at": "2026-08-21T00:00:00Z",
+      "assessment_id": "assessment_identity_mfa",
+      "control_id": "identity_mfa_coverage",
+      "control_version": "1.0.0",
+      "coverage": "complete",
+      "severity": "high",
+      "source_manifest_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "status": "partial"
+    },
+    {
+      "assessed_at": "2026-08-21T00:00:00Z",
+      "assessment_id": "assessment_storage_encryption",
+      "control_id": "storage_encryption",
+      "control_version": "1.0.0",
+      "coverage": "complete",
+      "severity": "medium",
+      "source_manifest_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "status": "pass"
+    },
+    {
+      "assessed_at": "2026-08-21T00:00:00Z",
+      "assessment_id": "assessment_logging_coverage",
+      "control_id": "logging_coverage",
+      "control_version": "1.0.0",
+      "coverage": "unavailable",
+      "severity": "low",
+      "source_manifest_hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "status": "not_assessed"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "case_identity_mfa",
+      "control_id": "identity_mfa_coverage",
+      "control_version": "1.0.0",
+      "due_at": "2026-08-30T00:00:00Z",
+      "owner_subject_id": "operator_alex",
+      "owner_team": "cloud_security",
+      "severity": "high",
+      "source_case_manifest_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "state": "active",
+      "version": 3
+    },
+    {
+      "case_id": "case_logging_coverage",
+      "control_id": "logging_coverage",
+      "control_version": "1.0.0",
+      "due_at": "2026-09-05T00:00:00Z",
+      "owner_subject_id": null,
+      "owner_team": "platform_operations",
+      "severity": "medium",
+      "source_case_manifest_hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "state": "pending_closure",
+      "version": 2
+    }
+  ],
+  "evidence": [
+    {
+      "availability": "complete",
+      "collector_id": "collector_aws_identity",
+      "control_id": "identity_mfa_coverage",
+      "evidence_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "evidence_id": "evidence_identity_mfa",
+      "observed_at": "2026-08-21T00:00:00Z",
+      "reference_id": "reference_identity_mfa",
+      "source_manifest_hash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "availability": "complete",
+      "collector_id": "collector_aws_storage",
+      "control_id": "storage_encryption",
+      "evidence_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "evidence_id": "evidence_storage_encryption",
+      "observed_at": "2026-08-21T00:00:00Z",
+      "reference_id": "reference_storage_encryption",
+      "source_manifest_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "availability": "unavailable",
+      "collector_id": "collector_aws_logging",
+      "control_id": "logging_coverage",
+      "evidence_hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "evidence_id": "evidence_logging_unavailable",
+      "observed_at": "2026-08-21T00:00:00Z",
+      "reference_id": "reference_logging_unavailable",
+      "source_manifest_hash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  ],
+  "generated_at": "2026-08-22T00:00:00Z",
+  "synthetic": true,
+  "tenant_id": "demo_tenant"
+}

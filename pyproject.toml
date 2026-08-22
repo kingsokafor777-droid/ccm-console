@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ccm-console"
+version = "0.1.0"
+description = "Tenant-scoped CCM console API and executive evidence/remediation workbench."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Kingsley Okafor" }]
+dependencies = [
+  "asyncpg>=0.29,<1",
+  "fastapi>=0.115,<1",
+  "pydantic>=2.10,<3",
+  "PyJWT>=2.10,<3",
+  "uvicorn>=0.30,<1",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Security",
+]
+
+[project.scripts]
+ccm-console-api = "ccm_console.main:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["apps/api/ccm_console"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["apps/web/.next", "apps/web/node_modules", "dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["ccm_console"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["apps/api"]
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["asyncpg"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers --cov=ccm_console --cov-branch --cov-report=term-missing --cov-fail-under=95"
+testpaths = ["tests/api"]
+
+[tool.coverage.run]
+branch = true
+source = ["ccm_console"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
