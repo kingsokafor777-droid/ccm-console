@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 — hosted workspace bootstrap repair
+
+The hosted Node jobs now invoke Corepack-managed pnpm from `apps/web`, where the pinned
+package-manager metadata is visible. This release contains no product-surface, persistence,
+authorization, evidence, or workflow semantic change.
+
 ## 0.1.1 — hosted CI bootstrap repair
 
 The hosted Node jobs now enable Corepack-managed pnpm before frontend installation. This

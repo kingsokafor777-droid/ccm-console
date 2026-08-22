@@ -74,7 +74,7 @@ def create_app(
 
     app = FastAPI(
         title="ccm-console API",
-        version="0.1.1",
+        version="0.1.2",
         docs_url="/docs",
         redoc_url=None,
         lifespan=lifespan,

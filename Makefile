@@ -10,10 +10,10 @@ api-quality:
 	PYTHONPATH=apps/api pytest
 
 web-quality:
-	pnpm --dir apps/web lint
-	pnpm --dir apps/web typecheck
-	pnpm --dir apps/web test
-	NODE_ENV=production pnpm --dir apps/web build
+	cd apps/web && pnpm lint
+	cd apps/web && pnpm typecheck
+	cd apps/web && pnpm test
+	cd apps/web && NODE_ENV=production pnpm build
 
 quality: api-quality web-quality
 

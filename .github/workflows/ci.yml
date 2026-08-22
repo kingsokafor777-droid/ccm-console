@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "22"
-      - run: corepack enable && pnpm --dir apps/web install --frozen-lockfile
+      - run: corepack enable && cd apps/web && pnpm install --frozen-lockfile
       - run: python -m pip install --upgrade pip && python -m pip install -e . -r requirements-dev.txt
       - run: PYTHONPATH=apps/api python scripts/build_fixtures.py
       - run: git diff --exit-code -- fixtures
@@ -49,5 +49,5 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "22"
-      - run: corepack enable && pnpm --dir apps/web install --frozen-lockfile
-      - run: pnpm --dir apps/web lint && pnpm --dir apps/web typecheck && pnpm --dir apps/web test && pnpm --dir apps/web build
+      - run: corepack enable && cd apps/web && pnpm install --frozen-lockfile
+      - run: cd apps/web && pnpm lint && pnpm typecheck && pnpm test && pnpm build
